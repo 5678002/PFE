@@ -13,14 +13,68 @@
 <link rel="stylesheet" href="css/nouislider.min.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+            title {
+			font-family: 'Georgia', sans-serif;
+		}
+#sel_Type,
+#sel_CNDT_ID,
+#sel_BRT_ID {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.filterselect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.filterlabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4c4c4c;
+  margin-top: 10px;
+}
+
+#div_Type {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#div_CNDT_ID {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#div_BRT_ID {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
         html, body, #map {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
+            background-color: #f1f2ec ; 
         }
         </style>
-        <title>Representation des fuites </title>
+    <title>Representation des fuites </title>
     </head>
     <body>
         <div id="map">
@@ -1177,7 +1231,7 @@
             document.getElementById("menu").appendChild(div_BRT_ID);
             sel_BRT_ID = document.createElement('select');
             sel_BRT_ID.multiple = true;
-            sel_BRT_ID.size = 10;
+            sel_BRT_ID.size = 15;
             sel_BRT_ID.id = "sel_BRT_ID";
             var BRT_ID_options_str = "<option value='' unselected></option>";
             sel_BRT_ID.onchange = function(){filterFunc()};
